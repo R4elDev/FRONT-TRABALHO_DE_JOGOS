@@ -1,19 +1,13 @@
 'user strict'
-// Fazer um post de jogo
-async function inserirJogo(){
-    const url = `http://localhost:3030/v1/controle-jogos/jogo/`
+
+async function inserirDesenvolvedora(){
+    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora`
 
     const data = {
         // Valor dos inputs no formulario
-
-
-        "nome": "Mortal Kombat",
-        "data_lancamento": "1985-09-13",
-        "versao": "1.0",
-        "tamanho": "500KB",
-        "descricao": "Jogo bem legal para diversão",
-        "foto_capa": "http://foto.jpg",
-        "link": "http://downloadJogo.zip"
+        "logo": "logo_ubisoft.png",
+        "link": "www.ubisoft.com.br",
+        "nome": "Ubisoft"
     }
     
     const options = {
@@ -34,31 +28,32 @@ async function inserirJogo(){
 }
 
 // Fazer o GET de TODOS os Jogos
-async function pesquisarJogos() {
-    const url = `http://localhost:3030/v1/controle-jogos/jogo`
+async function pesquisarDesenvolvedora() {
+    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora`
     const response = await fetch(url)
 
 
     const data = await response.json()
 
-    console.log(data.games)
-    return data.games
+    console.log(data.desenvolvedoras)
+    return data.desenvolvedoras
 }
 
 // Fazer o GET de um jogo pelo ID
-async function pesquisarJogoPorID(id) {
-    const url = `http://localhost:3030/v1/controle-jogos/jogo/${id}`
+async function pesquisarDesenvolvedoraPorID(id) {
+    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora/${id}`
     const response = await fetch(url)
 
 
     const data = await response.json()
 
-    return data.games
+    console.log(data.desenvolvedoras)
+    return data.desenvolvedoras
 }
 
 // Fazer o DELETE de um jogo pelo id
-async function excluirUmJogoPorID(id) {
-    const url = `http://localhost:3030/v1/controle-jogos/jogo/${id}`
+async function excluirUmaDesenvolvedoraPorID(id) {
+    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora/${id}`
 
     const options = {
         method : 'DELETE'
@@ -75,18 +70,14 @@ async function excluirUmJogoPorID(id) {
 }
 
 // Realizando o PUT em um jogo por ID
-async function atualizarJogoPorID(id){
-    const url = `http://localhost:3030/v1/controle-jogos/jogo/${id}`
+async function atualizarDesenvolvedoraPorID(id){
+    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora/${id}`
 
     const data = {
         // Valor dos inputs no formulario
-        "nome": "Mortal Kombat 3",
-        "data_lancamento": "1985-09-13",
-        "versao": "1.0",
-        "tamanho": "500KB",
-        "descricao": "Jogo bem legal para diversão",
-        "foto_capa": "http://foto.jpg",
-        "link": "http://downloadJogo.zip"
+        "logo": "logo_microsoft.png",
+        "link": "www.microsoft.com.br",
+        "nome": "microsoft"
     }
     
     const options = {
@@ -101,13 +92,9 @@ async function atualizarJogoPorID(id){
 
     console.log(response)
 
-    if(response.status == 201){
+    if(response.status == 200){
         alert('Postagem Atualizada')
     }
 }
 
-
-
-
-
-
+excluirUmaDesenvolvedoraPorID(1)
