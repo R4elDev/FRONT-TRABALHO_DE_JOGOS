@@ -1,13 +1,11 @@
 'user strict'
 
-async function inserirDesenvolvedora(){
-    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora`
+async function inserirGenero(){
+    const url = `http://localhost:3030/v1/controle-jogos/genero`
 
     const data = {
         // Valor dos inputs no formulario
-        "logo": "logo_ubisoft.png",
-        "link": "www.ubisoft.com.br",
-        "nome": "Ubisoft"
+        "tipo_de_genero": "SandBox"
     }
     
     const options = {
@@ -28,32 +26,32 @@ async function inserirDesenvolvedora(){
 }
 
 // Fazer o GET de TODOS os Jogos
-async function pesquisarDesenvolvedora() {
-    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora`
+async function pesquisarGenero() {
+    const url = `http://localhost:3030/v1/controle-jogos/genero`
     const response = await fetch(url)
 
 
     const data = await response.json()
 
-    console.log(data.desenvolvedoras)
-    return data.desenvolvedoras
+    console.log(data.generos)
+    return data.generos
 }
 
 // Fazer o GET de um jogo pelo ID
-async function pesquisarDesenvolvedoraPorID(id) {
-    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora/${id}`
+async function pesquisarGeneroPorID(id) {
+    const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
     const response = await fetch(url)
 
 
     const data = await response.json()
 
-    console.log(data.desenvolvedoras)
-    return data.desenvolvedoras
+    console.log(data.generos)
+    return data.generos
 }
 
 // Fazer o DELETE de um jogo pelo id
-async function excluirUmaDesenvolvedoraPorID(id) {
-    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora/${id}`
+async function excluirUmaGeneroPorID(id) {
+    const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
 
     const options = {
         method : 'DELETE'
@@ -70,14 +68,12 @@ async function excluirUmaDesenvolvedoraPorID(id) {
 }
 
 // Realizando o PUT em um jogo por ID
-async function atualizarDesenvolvedoraPorID(id){
-    const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora/${id}`
+async function atualizarGeneroPorID(id){
+    const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
 
     const data = {
         // Valor dos inputs no formulario
-        "logo": "logo_microsoft.png",
-        "link": "www.microsoft.com.br",
-        "nome": "microsoft"
+        "tipo_de_genero": "Albion"
     }
     
     const options = {
@@ -96,3 +92,6 @@ async function atualizarDesenvolvedoraPorID(id){
         alert('Postagem Atualizada')
     }
 }
+
+atualizarGeneroPorID(2)
+pesquisarGenero()
