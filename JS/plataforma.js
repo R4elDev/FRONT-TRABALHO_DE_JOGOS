@@ -1,11 +1,12 @@
 'user strict'
 
-async function inserirGenero(){
-    const url = `http://localhost:3030/v1/controle-jogos/genero`
+async function inserirPlataforma(){
+    const url = `http://localhost:3030/v1/contole-jogos/plataforma`
 
     const data = {
         // Valor dos inputs no formulario
-        "tipo_de_genero": "SandBox"
+        "tipo_de_plataforma": "PS4",
+        "logo": "ps4_logo.jpeg"
     }
     
     const options = {
@@ -25,33 +26,35 @@ async function inserirGenero(){
     }
 }
 
-// Fazer o GET de TODOS os Jogos
-async function pesquisarGenero() {
-    const url = `http://localhost:3030/v1/controle-jogos/genero`
+// Fazer o GET de TODOS as plataformas
+async function pesquisarPlataforma() {
+    const url = `http://localhost:3030/v1/controle-jogos/plataforma`
     const response = await fetch(url)
 
 
     const data = await response.json()
 
-    console.log(data.generos)
-    return data.generos
+    console.log(data.plataforma)
+    return data.plataforma
+
 }
 
-// Fazer o GET de um jogo pelo ID
-async function pesquisarGeneroPorID(id) {
-    const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
+// Fazer o GET de uma Plataforma pelo ID
+async function pesquisarPlataformaPorId(id) {
+    const url = `http://localhost:3030/v1/controle-jogos/plataforma/${id}`
     const response = await fetch(url)
 
 
     const data = await response.json()
 
-    console.log(data.generos)
-    return data.generos
+    console.log(data.plataforma)
+    
+    return data.plataforma
 }
 
-// Fazer o DELETE de um jogo pelo id
-async function excluirUmaGeneroPorID(id) {
-    const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
+// Fazer o DELETE de uma Plataforma pelo id
+async function excluirUmaPlataformaPorID(id) {
+    const url = `http://localhost:3030/v1/controle-jogos/plataforma/${id}`
 
     const options = {
         method : 'DELETE'
@@ -67,13 +70,14 @@ async function excluirUmaGeneroPorID(id) {
     return response.ok
 }
 
-// Realizando o PUT em um jogo por ID
-async function atualizarGeneroPorID(id){
-    const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
+// Realizando o PUT em uma Plataforma por ID
+async function atualizarPlataformaPorID(id){
+    const url = `http://localhost:3030/v1/controle-jogos/plataforma/${id}`
 
     const data = {
         // Valor dos inputs no formulario
-        "tipo_de_genero": "Albion"
+        "tipo_de_plataforma": "PS5",
+        "logo": "ps5_logo.jpeg"
     }
     
     const options = {
@@ -92,5 +96,7 @@ async function atualizarGeneroPorID(id){
         alert('Postagem Atualizada')
     }
 }
+
+
 
 
