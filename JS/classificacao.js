@@ -26,7 +26,7 @@ async function inserirClassificacao(){
 }
 
 // Fazer o GET de TODOS os Jogos
-async function pesquisarClassificacoes() {
+export async function pesquisarClassificacoes() {
     const url = `http://localhost:3030/v1/controle-jogos/classificacao`
     const response = await fetch(url)
 
@@ -38,7 +38,7 @@ async function pesquisarClassificacoes() {
 }
 
 // Fazer o GET de um jogo pelo ID
-async function pesquisarClassificacaoPorID(id) {
+export async function pesquisarClassificacaoPorID(id) {
     const url = `http://localhost:3030/v1/controle-jogos/classificacao/${id}`
     const response = await fetch(url)
 

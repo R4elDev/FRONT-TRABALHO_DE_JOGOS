@@ -28,7 +28,7 @@ async function inserirDesenvolvedora(){
 }
 
 // Fazer o GET de TODOS os Jogos
-async function pesquisarDesenvolvedora() {
+export async function pesquisarDesenvolvedora() {
     const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora`
     const response = await fetch(url)
 
@@ -40,7 +40,7 @@ async function pesquisarDesenvolvedora() {
 }
 
 // Fazer o GET de um jogo pelo ID
-async function pesquisarDesenvolvedoraPorID(id) {
+export async function pesquisarDesenvolvedoraPorID(id) {
     const url = `http://localhost:3030/v1/controle-jogos/desenvolvedora/${id}`
     const response = await fetch(url)
 

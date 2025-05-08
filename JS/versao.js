@@ -94,4 +94,3 @@ async function atualizarVersaoPorID(id){
         alert('Postagem Atualizada')
     }
 }
-pesquisarVersao()

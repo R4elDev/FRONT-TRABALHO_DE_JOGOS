@@ -25,8 +25,8 @@ async function inserirGenero(){
     }
 }
 
-// Fazer o GET de TODOS os Jogos
-async function pesquisarGenero() {
+// Fazer o GET de TODOS os Generos
+export async function pesquisarGenero() {
     const url = `http://localhost:3030/v1/controle-jogos/genero`
     const response = await fetch(url)
 
@@ -37,8 +37,8 @@ async function pesquisarGenero() {
     return data.generos
 }
 
-// Fazer o GET de um jogo pelo ID
-async function pesquisarGeneroPorID(id) {
+// Fazer o GET de um Genero pelo ID
+export async function pesquisarGeneroPorID(id) {
     const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
     const response = await fetch(url)
 
@@ -49,7 +49,7 @@ async function pesquisarGeneroPorID(id) {
     return data.generos
 }
 
-// Fazer o DELETE de um jogo pelo id
+// Fazer o DELETE de um Genero pelo id
 async function excluirUmaGeneroPorID(id) {
     const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
 
@@ -67,7 +67,7 @@ async function excluirUmaGeneroPorID(id) {
     return response.ok
 }
 
-// Realizando o PUT em um jogo por ID
+// Realizando o PUT em um Genero por ID
 async function atualizarGeneroPorID(id){
     const url = `http://localhost:3030/v1/controle-jogos/genero/${id}`
 

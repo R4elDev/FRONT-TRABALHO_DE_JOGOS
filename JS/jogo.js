@@ -1,6 +1,6 @@
 'user strict'
 // Fazer um post de jogo
-async function inserirJogo(){
+export async function inserirJogo(){
     const url = `http://localhost:3030/v1/controle-jogos/jogo/`
 
     const data = {
@@ -34,7 +34,7 @@ async function inserirJogo(){
 }
 
 // Fazer o GET de TODOS os Jogos
-async function pesquisarJogos() {
+export async function pesquisarJogos() {
     const url = `http://localhost:3030/v1/controle-jogos/jogo`
     const response = await fetch(url)
 
@@ -46,7 +46,7 @@ async function pesquisarJogos() {
 }
 
 // Fazer o GET de um jogo pelo ID
-async function pesquisarJogoPorID(id) {
+export async function pesquisarJogoPorID(id) {
     const url = `http://localhost:3030/v1/controle-jogos/jogo/${id}`
     const response = await fetch(url)
 
@@ -57,7 +57,7 @@ async function pesquisarJogoPorID(id) {
 }
 
 // Fazer o DELETE de um jogo pelo id
-async function excluirUmJogoPorID(id) {
+export async function excluirUmJogoPorID(id) {
     const url = `http://localhost:3030/v1/controle-jogos/jogo/${id}`
 
     const options = {
@@ -75,7 +75,7 @@ async function excluirUmJogoPorID(id) {
 }
 
 // Realizando o PUT em um jogo por ID
-async function atualizarJogoPorID(id){
+export async function atualizarJogoPorID(id){
     const url = `http://localhost:3030/v1/controle-jogos/jogo/${id}`
 
     const data = {
@@ -105,6 +105,8 @@ async function atualizarJogoPorID(id){
         alert('Postagem Atualizada')
     }
 }
+
+
 
 
 
