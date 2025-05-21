@@ -40,9 +40,7 @@ export async function pesquisarJogos() {
 
 
     const data = await response.json()
-
-    console.log(data.games)
-    return data.games
+    return data.jogos
 }
 
 // Fazer o GET de um jogo pelo ID
@@ -53,7 +51,7 @@ export async function pesquisarJogoPorID(id) {
 
     const data = await response.json()
 
-    return data.games
+    return data.jogos
 }
 
 // Fazer o DELETE de um jogo pelo id
