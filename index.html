@@ -15,7 +15,7 @@
 
 <body>
     <main class="pagina-home">
-        <div class="containerInformacoes">
+        <div class="containerInformacoes" id="home">
             <div class="parteUm">
                 <div class="tituloProjeto">
                     <h1>PROJETO SEMESTRAL</h1>
@@ -23,12 +23,12 @@
                 <div class="listaDeOpcoes">
                     <nav>
                         <ul class="opcoesDeCategorias">
-                            <li>DESENVOLVEDORA</li>
-                            <li class="bkmaisquemedio">CLASSIFICACÃO</li>
-                            <li class="bkmedio">PLATAFORMA</li>
-                            <li class="bkmenor">JOGO</li>
-                            <li class="bkmenor">VERSÃO</li>
-                            <li class="bkmenor">GENÊRO</li>
+                            <li id="desenvolvedora">DESENVOLVEDORA</li>
+                            <li class="bkmaisquemedio" id="classificacao">CLASSIFICACÃO</li>
+                            <li class="bkmedio" id="plataforma">PLATAFORMA</li>
+                            <li class="bkmenor" id="jogo">JOGO</li>
+                            <li class="bkmenor" id="versao">VERSÃO</li>
+                            <li class="bkmenor" id="genero">GÊNERO</li>
                         </ul>
                     </nav>
                 </div>
@@ -37,7 +37,7 @@
                 <img src="./IMG/img_photo.png" alt="logoGigante">
             </div>
         </div>
-        <div class="visualizacaoJogos">
+        <div class="visualizacaoJogos" id="visuJogos">
             <div class="navegacao">
                 <div class="logoTitulo">
                     <img src="./img/imgLogoPequena.png" alt="">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="icones">
                     <img src="./img/fotoPesquisar.png" alt="" class="Imgpesquisar">
-                    <img src="./img/fotoAdicionar.png" alt="" class="imgAddJogo">
+                    <img src="./img/fotoAdicionar.png" alt="" class="imgAddJogo" id="novo-jogo">
                 </div>
             </div>
             <div class="tituloSessao">
@@ -62,9 +62,9 @@
                 </div> -->
             </div>
             <div class="maisDetalhesJogo" id="maisDetalhes">
-                <div class="iconeSair" id="close">
+                <!-- <div class="iconeSair" id="close">
                     <h1>x</h1>
-                </div>
+                </div> -->
                 <!-- <div class="conteudoPrincipal">
                     <div class="contImage">
 
@@ -115,6 +115,86 @@
                 </div> -->
             </div>
 
+        </div>
+        <div class="cadastrandoJogo" id="cadastroJogo">
+            <div class="navegacao">
+                <div class="logoTitulo">
+                    <img src="./img/imgLogoPequena.png" alt="">
+                    <h1>JOGOS</h1>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Pesquise um jogo específico">
+                </div>
+                <div class="icones">
+                    <img src="./img/fotoPesquisar.png" alt="" class="Imgpesquisar">
+                    <img src="./img/fotoAdicionar.png" alt="" class="imgAddJogo" id="novo-jogo">
+                </div>
+            </div>
+            <div class="tituloSessao">
+                <h1>CADASTRE UM NOVO JOGO</h1>
+            </div>
+            <div class="containerFormEShow">
+                <div class="formCadastroJogo">
+                    <div class="inputsJogo">
+                        <input type="text" placeholder="Nome" id="nomeJogo" class="inputCadastroJogo">
+                        <input type="text" placeholder="Descricão" id="descricaoJogo" class="inputCadastroJogo">
+                        <input type="text" placeholder="Lançamento ( data )" id="lancamentoJogo" class="inputCadastroJogo">
+                        <input type="text" placeholder="Versão" id="versaoJogo" class="inputCadastroJogo">
+                        <input type="text" placeholder="Tamanho" id="tamanhoJogo" class="inputCadastroJogo">
+                        <input type="text" placeholder="Classificacão" id="classificacaoJogo" class="inputCadastroJogo">
+                    </div>
+                    <div class="fotoEButton">
+                        <div class="enviarFoto">
+                            <h1>Capa</h1>
+                            <div class="preview">
+                                <input class="preview-input" id="foto" type="file" accept="image/*">
+                                <img class="preview-image" id="preview-image" src="./IMG/imgCam.png">
+                            </div>
+                        </div>
+                        <button class="cadastroJogo">CADASTRAR</button>
+                    </div>
+                </div>
+                <div class="verResultado">
+                    <div class="infoPrincpal">
+                        <div class="preview result">
+                            <input class="preview-input"  id="foto" type="file" accept="image/*">
+                            <img class="preview-image" id="preview-image" src="./IMG/imgCam.png">
+                        </div>
+                        <h1>NOME</h1>
+                        <h2>DESCRICÃO</h2>
+                    </div>
+                    <div class="informacoesDetalhadasResult">
+                        <div class="contInfoDetalhadaResult">
+                            <h2>Lançamento:</h2>
+                            <h3>13/06/2005</h3>
+                        </div>
+                        <div class="contInfoDetalhadaResult">
+                            <h2>Versão:</h2>
+                            <h3>1.11</h3>
+                        </div>
+                        <div class="contInfoDetalhadaResult">
+                            <h2>Tamanho:</h2>
+                            <h3>10gb</h3>
+                        </div>
+                        <div class="contInfoDetalhadaResult">
+                            <h2>Classificação:</h2>
+                            <h3>+ 18</h3>
+                        </div>
+                        <div class="contInfoDetalhadaResult">
+                            <h2>Plataforma:</h2>
+                            <h3>PS5</h3>
+                        </div>
+                        <div class="contInfoDetalhadaResult">
+                            <h2>Generos:</h2>
+                            <h3>Terror, Suspense</h3>
+                        </div>
+                        <div class="contInfoDetalhadaResult">
+                            <h2>Desenvolvedoras:</h2>
+                            <h3>SantaMonica,Rockstar</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>

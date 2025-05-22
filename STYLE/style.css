@@ -28,14 +28,15 @@ main{
 }
 
 .containerInformacoes{
-    display: none;
+    visibility: visible;
+    display: flex;
     flex-direction: row;
+    display: none;
 }
 
-.imgGigante{
-    position: absolute;
-    left: 35%;
-}
+
+
+
 
 .tituloProjeto{
     width: 600px;
@@ -84,11 +85,13 @@ main{
 
 /*TELA VISUALIZAÇÃO JOGOS*/
 .visualizacaoJogos{
+    visibility: hidden;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 50px;
+    display: none;
 }
 
 
@@ -188,6 +191,8 @@ main{
 
 /* TELA AO CLICAR SOBRE UM JOGO PARA VER MAIS INFORMACOES */
 
+
+
 .maisDetalhesJogo{
     max-width: 650px;
     max-height: 503px;
@@ -201,7 +206,6 @@ main{
     left: 30%;
     border-radius: 30px;
     visibility: hidden;
-    
 }
 
 .iconeSair{
@@ -270,6 +274,8 @@ main{
 }
 
 
+
+
 .contInfoDetalhada{
     display: flex;
     align-items: center;
@@ -295,6 +301,143 @@ main{
     text-align: end;
     gap: 15px;
 }
+
+
+/*CADASTRO DE JOGOS*/
+
+#cadastroJogo{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.containerFormEShow{
+    height: 750px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+
+.verResultado{
+    border: 1px solid salmon;
+    width: 40%;
+    padding: 15px;
+}
+
+.formCadastroJogo{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-right: 1px solid #44D62C;
+}
+
+.inputsJogo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 15px;
+    
+}
+
+.inputCadastroJogo::placeholder{
+    color: #979696;
+}
+
+.inputCadastroJogo{
+    background-color: transparent;
+    border: none;
+    padding-left: 15px;
+    outline: none;
+    border-bottom: 2px solid #44D62C;
+    height: 65px;
+    width: 379px;
+}
+
+#descricaoJogo {
+    border-top: 2px solid #44D62C;
+    height: 300px;
+    padding-bottom: 40%;
+    color: white;
+    width: 415px;
+}
+
+.fotoEButton{
+    width: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.preview{
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    position: relative;
+    background-color: #222222;
+}
+
+.preview-input{
+    display: none;
+}
+
+.preview-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+.cadastroJogo{
+    height: 64px;
+    width: 264px;
+    background-color: #222222;
+    font-size: 35px;
+    border-radius: 25px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-family:"Pixelify Sans", sans-serif;
+    
+}
+
+.infoPrincpal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.informacoesDetalhadasResult{
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+}
+
+.contInfoDetalhadaResult{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.contInfoDetalhadaResult h3{
+    margin-left: 15px;
+}
+
+
+
+
+
+
 
 
 

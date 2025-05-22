@@ -2,6 +2,13 @@
 
 import { pesquisarJogos,pesquisarJogoPorID } from "./jogo.js"
 
+const containerInformacoesHome = document.getElementById('home')
+const containerVisualizacaoJogos = document.getElementById('visuJogos')
+const containerAddJogos = document.getElementById('cadastroJogo')
+
+containerVisualizacaoJogos.style.display = 'none'
+
+
 function criarCard (jogo){
     const container = document.getElementById('containerCard')
     const card = document.createElement('div')
@@ -38,10 +45,19 @@ async function exibirJogoSelecionadoPorId(botao){
    const idJogo = botao.id
    const base = await pesquisarJogoPorID(idJogo)
    const containerDetalhes = document.getElementById('maisDetalhes')
+   containerDetalhes.replaceChildren('')
    containerDetalhes.style.visibility = 'visible'
 
    base.forEach(function(jogo){
         console.log(jogo)
+        const iconeSair = document.createElement('div')
+        iconeSair.classList.add('iconeSair')
+        const h1Sair = document.createElement('h1')
+        h1Sair.id = 'close'
+        h1Sair.textContent = 'x'
+        h1Sair.onclick = function(){
+            containerDetalhes.style.visibility = 'hidden'
+        }
         const divConteudoPrincipal = document.createElement('div')
         divConteudoPrincipal.classList.add('conteudoPrincipal')
         const contImage = document.createElement('div')
@@ -136,7 +152,13 @@ async function exibirJogoSelecionadoPorId(botao){
         jogo.desenvolvedoras.forEach(function(desenvolvedoras){
             h3Desenvolvedora.textContent = desenvolvedoras.nome
         })
+
+        containerDetalhes.appendChild(iconeSair)
+        iconeSair.appendChild(h1Sair)
+        
         containerDetalhes.appendChild(divConteudoPrincipal)
+
+        
         
         divIconesMaisDetalhes.appendChild(imgLapis)
         divIconesMaisDetalhes.appendChild(imgExcluir)
@@ -147,6 +169,8 @@ async function exibirJogoSelecionadoPorId(botao){
         divTextosSobre.appendChild(nomeDesc)
         nomeDesc.appendChild(h1Desc)
         nomeDesc.appendChild(p1Desc)
+
+        
 
         divTextosSobre.appendChild(divInformacoesDetalhadas)
 
@@ -178,15 +202,30 @@ async function exibirJogoSelecionadoPorId(botao){
         contInfoDetalhadaDesenvolvedora.appendChild(h3Desenvolvedora)
         divInformacoesDetalhadas.appendChild(contInfoDetalhadaDesenvolvedora)
 
+
    })
 
    
 }
 
-// Fazer um endpoint que filtre por nome dos jogos
 
-document.getElementById('close').addEventListener('click',() =>{
-    const contMaisDetalhes = document.getElementById('maisDetalhes').style.visibility = 'hidden'
-    const containerMaisDetalhesJogos = document.getElementById('maisDetalhes')
+// BOTÕES HOME
+document.getElementById('jogo').addEventListener('click',() =>{
+    containerInformacoesHome.style.display = 'none'
+    containerInformacoesHome.style.visibility = 'hidden'
+    containerVisualizacaoJogos.style.visibility = 'visible'
+    containerVisualizacaoJogos.style.display = 'flex'
 })
+
+
+// BOTÕES JOGOS
+document.getElementById('novo-jogo').addEventListener('click', () =>{
+    containerVisualizacaoJogos.style.visibility = 'hidden'
+    containerVisualizacaoJogos.style.display = 'none'
+    containerAddJogos.style.display = 'flex'
+})
+
+
+
+
 exibirJogos()
